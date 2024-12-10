@@ -72,3 +72,4 @@ def id3(filepath, k, split):
 
     average_accuracy = np.mean(accuracies)
     print(f"Acurácia média do ID3: {average_accuracy * 100:.2f}%")
+    return accuracies

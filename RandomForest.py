@@ -103,7 +103,7 @@ def k_fold_cross_validation(data, labels, k=5, trees=10, max_features=None):
 
         print(f'Acurácia da amostra: {accuracy * 100:.2f}%\n')
     
-    return np.mean(accuracies)
+    return accuracies
 
 def rf(filepath, k, trees):
     data = pd.read_csv(filepath, index_col=0)
@@ -111,5 +111,6 @@ def rf(filepath, k, trees):
     features = data[['qualidade_pressao_arterial', 'pulso', 'respiracao']].values
     labels = data['rotulo'].values
 
-    average_accuracy = k_fold_cross_validation(features, labels, k, trees, max_features=int(np.sqrt(features.shape[1])))
-    print(f'Acurácia média do Random Forest: {average_accuracy * 100:.2f}%')
+    accuracies = k_fold_cross_validation(features, labels, k, trees, max_features=int(np.sqrt(features.shape[1])))
+    print(f'Acurácia média do Random Forest: {np.mean(accuracies) * 100:.2f}%')
+    return accuracies
