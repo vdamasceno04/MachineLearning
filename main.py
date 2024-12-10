@@ -1,8 +1,8 @@
 from id3 import id3
 from RandomForest import rf
+from NeuralNetwork import nn
 import matplotlib.pyplot as plt
 import pandas as pd
-#from NeuralNetwork import nn
 
 def plot(k_values, accuracy_results):
     data = []
@@ -62,15 +62,14 @@ accuracy_results = {
 #plot(k_values, accuracy_results) #ID3, K=3,7,10,BEST SPLIT
 """
 accuracy_results = {
-    k_values[0]: rf(filepath, k_values[0],40 ,6),
-    k_values[1]: rf(filepath, k_values[1],40 ,6),
-    k_values[0]: rf(filepath, k_values[0],120 ,6),
-    k_values[1]: rf(filepath, k_values[1],120 ,6),
-    k_values[0]: rf(filepath, k_values[0],40 ,18),
-    k_values[1]: rf(filepath, k_values[1],40 ,18),
-    k_values[0]: rf(filepath, k_values[0],120 ,18),
-    k_values[1]: rf(filepath, k_values[1],120 ,18),
-    
+    k_values[0]: nn(filepath, k_values[0],40 ,6),
+    k_values[1]: nn(filepath, k_values[1],40 ,6),
+    k_values[0]: nn(filepath, k_values[0],120 ,6),
+    k_values[1]: nn(filepath, k_values[1],120 ,6),
+    k_values[0]: nn(filepath, k_values[0],40 ,18),
+    k_values[1]: nn(filepath, k_values[1],40 ,18),
+    k_values[0]: nn(filepath, k_values[0],120 ,18),
+    k_values[1]: nn(filepath, k_values[1],120 ,18),
 }
 plot(k_values, accuracy_results) #RF, K=3,7,10, 20 arvores
 
