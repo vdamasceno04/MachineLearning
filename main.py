@@ -43,7 +43,7 @@ def plot(k_values, accuracy_results):
 
 filepath = './treino_modificado.txt'
 
-k_values = [3, 7, 10]
+k_values = [3, 10]
 
 """
 accuracy_results = {
@@ -62,18 +62,24 @@ accuracy_results = {
 #plot(k_values, accuracy_results) #ID3, K=3,7,10,BEST SPLIT
 """
 accuracy_results = {
-    k_values[0]: rf(filepath, k_values[0], 10),
-    k_values[1]: rf(filepath, k_values[1], 10),
-    k_values[2]: rf(filepath, k_values[2], 10)
+    k_values[0]: rf(filepath, k_values[0],40 ,6),
+    k_values[1]: rf(filepath, k_values[1],40 ,6),
+    k_values[0]: rf(filepath, k_values[0],120 ,6),
+    k_values[1]: rf(filepath, k_values[1],120 ,6),
+    k_values[0]: rf(filepath, k_values[0],40 ,18),
+    k_values[1]: rf(filepath, k_values[1],40 ,18),
+    k_values[0]: rf(filepath, k_values[0],120 ,18),
+    k_values[1]: rf(filepath, k_values[1],120 ,18),
+    
 }
 plot(k_values, accuracy_results) #RF, K=3,7,10, 20 arvores
 
-k = 10 #5
-trees = 10
-rf(filepath, k, trees)
+#k = 10 #5
+#trees = 10
+#rf(filepath, k, trees)
 
 ##################################################
-k=4
-epochs=42
-batch_size=6
+#k=4
+#epochs=42
+#batch_size=6
 #nn(filepath, k, epochs, batch_size)
